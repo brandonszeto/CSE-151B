@@ -1,0 +1,19 @@
+\textbf{Number of learnable parameters and feature map dimensions} \\
+Suppose we had the following architecture:
+\begin{verbatim}
+        inputs -> conv1 -> conv2 -> maxpool -> conv3 -> fc1 -> fc2 (outputs)
+    \end{verbatim}
+All convolutions have stride 1 and no zero padding unless mentioned. conv1 has a 5x5 kernel with 5 output channels. conv2 has a 7x7 kernel with 10 output channels. maxpool has 3x3 kernel with stride 2. conv3 has single output channel with a 13x13 kernel and stride=10. fc2 has 512 input units. You are supposed to predict 10 class outputs.\\
+If ReLU is the activation function between each layer and the inputs are $[256 \times 256]$ RGB images, what are:
+\begin{enumerate}
+	\item \textbf{conv1}, \textbf{conv2}, \textbf{conv3} filter shape
+	\item \textbf{conv1} output feature map shape
+	\item \textbf{conv2} output feature map shape
+	\item \textbf{maxpool} output feature map shape
+	\item \textbf{conv3} output feature map shape
+	\item Number of input and output units of \textbf{fc1} and \textbf{fc2} layer
+\end{enumerate}
+Show your work with calculations (6 pts)
+
+\begin{tcolorbox}[title=Solution]
+\end{tcolorbox}
