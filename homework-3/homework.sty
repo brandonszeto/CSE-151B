@@ -1,0 +1,44 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{homework}
+
+\RequirePackage{amsmath}
+\RequirePackage[table]{xcolor}
+\RequirePackage{amsfonts}
+\RequirePackage{tikz}
+\RequirePackage{graphicx}
+\RequirePackage{mathtools}
+\RequirePackage{tcolorbox}
+\RequirePackage{float}
+
+% \DeclareOption*{\newcommand{\hwnum}{\CurrentOption}}
+% \ProcessOptions\relax
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+\newcommand{\A}[0]{\texttt{A}}
+\newcommand{\C}[0]{\texttt{C}}
+\newcommand{\G}[0]{\texttt{G}}
+\newcommand{\U}[0]{\texttt{U}}
+\newcommand{\bayes}[2]{P(#1 | #2) &= \frac{P(#2 | #1) P( #1)}{P(#2)}}
+\newcommand{\so}{\textit{sumodd}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand*\xor{\oplus}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\limn}{\lim_{n \to \infty}}
+\newcommand{\hwname}{Brandon Szeto}
+\newcommand{\hwemail}{A17002478}
+\newcommand{\hwtype}{Homework}
+\newcommand{\hwclass}{CSE 151B}
+\newcommand{\hwlecture}{}
+\newcommand{\hwsection}{}
+
+\newenvironment{casedef}[1][]{
+	\begin{equation*}
+		#1 = \begin{cases}
+			}
+			{
+		\end{cases}
+	\end{equation*}
+}
