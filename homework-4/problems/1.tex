@@ -1,0 +1,9 @@
+Why is positional encoding important in transformers? Why is it not needed in RNNs?
+
+\begin{tcolorbox}
+In transformers, positional encoding gives the model information about the order of the input tokens. This information allows the model to distinguish between tokens at different positions within the sequence, as all tokens are processed simultaneously.
+
+\vspace{2mm}
+
+However in RNNs, the sequential order of input tokens is captured through recurrent connections and the sequential processing of the input tokens. As the RNN processes each token one by one and maintains a hidden state, it encodes positional information within the hidden state. Therefore, positional encoding is not needed in RNNs.
+\end{tcolorbox}
