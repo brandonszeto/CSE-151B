@@ -1,0 +1,32 @@
+\section{Generalization}
+Best way is to get more data.
+
+\textbf{Regularization}: Minimizing $J = E + \lambda C$ where $C$ is a measure of complexity.
+
+$L_1$ minimizes $|W|$
+
+$L_2$ minimizes $\| W\|_2^2$
+
+\textbf{Dropout}: Randomly turning off hidden units during learning.
+
+\textbf{Early Stopping}: After waiting for the error to rise after some number of epochs, stop training.
+
+\section{Techniques}
+
+\textbf{Batch Gradient Descent}: Running average of gradients across the whole dataset is used to update the weights. Weights updated when all examples in a batch are seen.
+
+\textbf{Stochastic Gradient Descent}: Picks a random gradient at each iteration. The examples are shuffled so the actual gradients you follow are in random order. Helps reduce computations. A mini-batch is commonly used as a compromise between BGD and SGD.
+
+\textbf{Shuffling}: Helps minibatch contain most of the categories, infrequent examples, and patterns different classes, but be careful of errors in data as more has to be learned about easy examples before hard ones can be tackled. 
+
+\textbf{Principle Component Analysis}: Decorrelates (makes orthogonal) inputs and shifts the mean of the input variables to be zero (not all positive or negative). Each component captures the maximum available variance in the data. Common to also normalize by dividing by the standard deviation.
+
+\textbf{Z Scoring}: Shifts mean of the input variables to zero, but does not decorrelate the inputs. Cannot throw away dimensions (no eigenvectors computed). Divides by standard deviation by default.
+
+\textbf{Weight Initialization}: Should all be different or else all $\delta$ will be the same. Idea: put gradients in range of activation function to maximize gradient and coordinate with input normalization.
+ 
+\textbf{Batch Normalization}: Normalizes all of the inputs in the network including to each hidden layer on a per unit basis over each minibatch. For each minibatch, z-scores each variable and gives the network the chance to undo batch normalization by giving it adaptive parameters (undoing is learnable).
+
+\textbf{Adaptive Learning Rates}: Dynamically adjust learning rate based on observed gradients. Individual learning rates for each weight. Rprop increases or decreases the learning rate by 1.2 or 0.5 times depending on the sign of the gradient. Rmsprop uses a moving average of the squared gradient for each weight. 
+
+\textbf{Momentum}: Speed up learning rate by keeping a running average of weight changes. Change these learning rates for each parameter. Weight change is calculated as a function of its current gradient and some decay $\gamma$ and its previous weight.
