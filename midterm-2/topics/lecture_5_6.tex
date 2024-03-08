@@ -1,0 +1,20 @@
+\section{Convnets}
+
+\textbf{Main Idea}: Multiple filters are run over an image to learn different features (e.g. weights are shared). Example: $224 \times 224 \times 3 * (5 \times 5 \times 3) \rightarrow 217 \times 217 \times 1$ 
+
+$$W_{\text{out}} = \frac{W_{\text{in}} - F - 2P}{S} + 1$$
+
+\textbf{Properties}
+
+\textbf{Locality}: nearby pixels correlate the most with nearby pixels, not pixels far away
+
+\textbf{Stationary Statistics}: the statistics of pixels are relatively uniform across the image
+
+\textbf{Translation Invariance}: identity of an object doesn’t depend on its location in the image. This is a result of conv + pool layers. A conv layer detects an object and pooling layers preserves the most prominent features in different regions and discards the rest, making it less sensitive to shifts.
+
+\textbf{Compositionality}: objects are made of parts
+
+\textit{Receptive fields get larger deeper into the network.}
+
+\textbf{Pool Layer}
+Reduces spatial size and number of parameters to prevent overfitting. Increases receptive field.

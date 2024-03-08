@@ -1,0 +1,57 @@
+\section{Clickers}
+
+\textbf{True:}
+
+A perceptron with no binary threshold unit is simply a linear regression model.
+
+If we reverse the delta rule ($\delta = y - t$ instead of $\delta = t - y$), the perceptron will \textbf{never} converge to a minima.
+
+The goal of linear regression is to find a set of weights $\mathbf{W}$ that map the design matrix $\mathbf{X}$ to targets $\mathbf{t}$.
+
+For softmax regression, the weight matrix $\mathbf{W}$ has number of entries equal to the number of edges in the network graph.
+
+Backpropagation allows a network to learn latent (abstract) representations of features and uses the chain rule to propagate gradients.
+
+Convergence with a multi-layer, non-linear network indicates that the network has found a local minima along the error surface.
+
+The locality property of the visual world is represented in convolutional neural networks by receptive fields that are only connected to a small patch of the image.
+
+The stationary statistics property of the visual world is represented in convolutional neural networks by learned features are applied all over the image (convolution).
+
+The translation invariance property of the visual world is represented in convolutional neural networks by learned features are applied all over the image (convolution) and max pooling.
+
+Convolution followed by nonlinearity then sub-sampling is equivalent to  convolution followed by sub-sampling then nonlinearity.
+
+Processing each pixel of an image with a square convolutional kernel containing all 1s would result in a feature map brighter than the image and resembling a blurred version of the image.
+
+Maximizing the likelihood also maximizes the log likelihood.
+
+The posterior in Maximum Likelihood Estimation tells us the probability of the weights given the data.
+
+Siamese networks can perform clustering, supervised learning, and dimensionality reduction.
+
+A RNN maps time into state.
+
+In RNNs order of inputs matter.
+
+A NTM is essentially a neural network with a working memory.
+
+\textbf{False:}
+
+Gradient descent uses linear regression (however, linear regression can use gradient descent when psuedoinverse is computationally expensive).
+
+A single layer perceptron is equivalent to logistic regression (a perceptron can only provide a binary outcome, whereas logistic regression provides a Bernoulli pdf)
+
+Cross entropy is a better loss function than MSE for linear regression (it's better for logistic regression)
+
+A network’s activation function must be differentiable everywhere (ReLU)
+
+Backpropagation is a nonlinear operation.
+
+In stochastic gradient descent (SGD), we should shuffle our minibatch before computing its gradients (Shuffling now has no impact on the weight changes, you need to shuffle the data before partitioning it into mini-batches).
+
+The more parameters in a CNN, the better it will perform at classifying images.
+
+In RNNs, the output of a timestep $t$ is the input to the same network at timestep $t + 1$.
+
+To write to memory in a (NTM), you can overwrite the memory in 1 operation (erase then add).

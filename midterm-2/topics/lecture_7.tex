@@ -1,0 +1,9 @@
+\section{Objective Functions}
+
+\textbf{Goal}: Find the most likely weights given the data. Using Baye's Theorem, figure out how to maximize the likelihood of the data given the weights. Must figure out the pdf of the data and maximize that.
+
+When doing regerssion, if we assume the targets are gaussian distributed and we maximize the likelihood of the data by minimizing the negative log likelihood of the data, we end up with SSE.
+
+When doing logistic and multinomial regression, if we assume the targets assume a binomial/multinomial distribution and maximize the likelihood of the data by minimizing the negative log likelihood of the data, we end up with cross entropy error.
+
+\textbf{Siamese Neural Networks}: Two sets of the same weights are placed together. Given two inputs each with a corresponding target. Trained to move outputs closer or farther apart. If inputs are the same, closer, if inptus are different, farther.

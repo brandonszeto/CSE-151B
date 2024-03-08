@@ -1,0 +1,8 @@
+\section{Perceptrons}
+\textbf{Learning Rule:} 
+
+$w_{ij} = w_{ij} + \alpha \delta_{j} z_{i}$ where $z_{i} = g(a_i)$
+
+In our examples (SSE, Cross Entropy), we have $\delta_j = (t_j - y_j)$ if $j$ is an output unit and $\delta_j = g'(a_j) \sum_k \delta_k w_{jk}$ if $j$ is a hidden unit.
+
+Backpropagation is a linear function with respect to $\delta$ not the weights.
