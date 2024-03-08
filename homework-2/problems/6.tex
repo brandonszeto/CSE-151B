@@ -16,4 +16,14 @@ If ReLU is the activation function between each layer and the inputs are $[256 \
 Show your work with calculations (6 pts)
 
 \begin{tcolorbox}[title=Solution]
+	\begin{enumerate}
+		\item \textbf{conv1} has filter shape ($5 \times 5 \times 3 \times 5$). As specified above, \textbf{conv1} has a $5 \times 5$ kernel with $5$ output channels. Since an RGB image has 3 input channels, we add an additional dimension of $3$. \\
+		      \textbf{conv2} has filter shape ($7 \times 7 \times 5 \times 10$). As specified above, \textbf{conv2} has a $7 \times 7$ kernel with $10$ output channels. Since \textbf{conv1} has an output of $5$ channels, \textbf{conv2} has an input of $5$ channels.\\
+		      \textbf{conv3} has filter shape ($13 \times 13 \times 10 \times 1$). As specified above, \textbf{conv2} has a $13 \times 13$ kernel with a single output channel. Since \textbf{conv2} has an output of $10$ channels, \textbf{conv3} has an input of $10$ channels.
+		\item \textbf{conv1} output feature map shape. Using $\textbf{Output Size} = \frac{\mathbf{W} - \mathbf{F} + \mathbf{2P}}{\mathbf{S}} + 1$, we have $\frac{256 - 5}{1} + 1 = 252$ in each dimension of the image. This results in shape $252 \times 252$ for each of $5$ output channels, resulting in overall shape ($252 \times 252 \times 5$).
+		\item \textbf{conv2} output feature map shape. Using $\textbf{Output Size} = \frac{\mathbf{W} - \mathbf{F} + \mathbf{2P}}{\mathbf{S}} + 1$, we have $\frac{252 - 7}{1} + 1 = 246$ in each dimension of the image. This results in shape $246 \times 246$ for each of $10$ output channels, resulting in overall shape ($246 \times 246 \times 10$).
+		\item \textbf{maxpool} output feature map shape. Using $\textbf{Output Size} = \frac{\mathbf{W} - \mathbf{F} + \mathbf{2P}}{\mathbf{S}} + 1$, we have $\frac{246 - 3}{2} + 1 = 122$ in each dimension of the image. This results in shape $122 \times 122$ for each of $10$ output channels, resulting in overall shape ($122 \times 122 \times 10$).
+		\item \textbf{conv3} output feature map shape. Using $\textbf{Output Size} = \frac{\mathbf{W} - \mathbf{F} + \mathbf{2P}}{\mathbf{S}} + 1$, we have $\frac{122 - 13}{10} + 1 = 11$ in each dimension of the image. This results in shape $11 \times 11$ for a single output channel, resulting in overall shape ($11 \times 11 \times 1$).
+		\item Number of input and output units of \textbf{fc1} and \textbf{fc2} layer. Since we have an output shape $11 \times 11 \times 1$ from \textbf{conv3}, we have an input size of $121$ to \textbf{fc1}. \textbf{fc1} can have an arbitrary $n$ number of output units. As stated in the problem, \textbf{fc2} expects $512$ input units, and must predict $10$ classes. Thus it must have $10$ outupt units.
+	\end{enumerate}
 \end{tcolorbox}

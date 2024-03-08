@@ -6,4 +6,46 @@
 \end{figure}
 
 \begin{tcolorbox}[title=Solution]
+	From our first feature map, we have
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			\cellcolor{gray} 0 & 1 & \cellcolor{gray}0  & -1 & \cellcolor{gray}1 \\ \hline
+			1                  & 1 & 0                  & -1 & 0                 \\ \hline
+			\cellcolor{gray} 1 & 1 & \cellcolor{gray}0  & 0  & \cellcolor{gray}1 \\ \hline
+			0                  & 0 & 1                  & 0  & 1                 \\ \hline
+			\cellcolor{gray}1  & 0 & \cellcolor{gray}-1 & -1 & \cellcolor{gray}0 \\ \hline
+		\end{tabular}
+		$\rightarrow$
+		\begin{tabular}{|c|}
+			\hline
+			0 \\
+			\hline
+		\end{tabular}
+	\end{center}
+	From our second feature map, we have
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			\cellcolor{gray}1 & 1  & \cellcolor{gray}1  & 0  & \cellcolor{gray}0 \\ \hline
+			0                 & -1 & 1                  & 0  & 0                 \\ \hline
+			\cellcolor{gray}0 & 1  & \cellcolor{gray}-1 & -1 & \cellcolor{gray}1 \\ \hline
+			-1                & 1  & -1                 & 0  & 1                 \\ \hline
+			\cellcolor{gray}1 & 1  & \cellcolor{gray}-1 & 0  & \cellcolor{gray}0 \\ \hline
+		\end{tabular}
+		$\rightarrow$
+		\begin{tabular}{|c|}
+			\hline
+			2 \\
+			\hline
+		\end{tabular}
+	\end{center}
+	Together, we have
+	\begin{center}
+		\begin{tabular}{|c|}
+			\hline
+			2 \\
+			\hline
+		\end{tabular}
+	\end{center}
 \end{tcolorbox}

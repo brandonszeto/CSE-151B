@@ -2,6 +2,7 @@
 \ProvidesPackage{homework}
 
 \RequirePackage{amsmath}
+\RequirePackage[table]{xcolor}
 \RequirePackage{amsfonts}
 \RequirePackage{tikz}
 \RequirePackage{graphicx}
@@ -34,10 +35,10 @@
 \newcommand{\hwsection}{}
 
 \newenvironment{casedef}[1][]{
-        \begin{equation*}
+	\begin{equation*}
 		#1 = \begin{cases}
-        }
-        {
+			}
+			{
 		\end{cases}
-        \end{equation*}
-        }
+	\end{equation*}
+}
