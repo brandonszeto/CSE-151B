@@ -1,1 +1,22 @@
 \section{Reinforcement Learning}
+An agent that acts in some environment. Recieves rewards, good or bad, to tell it if something happened. Feedback is typically delayed. The agent wants to maximize its long-term expected reward.
+
+Agents learn via a policy, $\pi(s) = P(a_1 ... a_n | s)$, which is a function that takes the state of the environment and output action probabilities. This function can be implemented as a deep network that maps states (i.e. images of a game) to a softmax over actions. Atari used a deep network to learn games.
+
+\textbf{Policy Gradient:} 1) Sample from softmax distribution. 2) Treat the sample as a teacher for that state/action pair. 3) Compute the weight changes, add them to a running average. 4) Multiply the weight changes by the sign of the reward. 5) Change the weights after a game.
+
+\textbf{Maximizing long-term reward:} $ r_t = \sum_{k = 0}^\infty \gamma^k r_{t + k + 1} $ where $0 \leq \gamma \leq 1$  is the discount rate.
+
+\textbf{Markov Property:} The future behavior of a process depends only on its present state, not on the sequence of events that preceded it.
+
+\textbf{Model-based RL:} The agent either has avaialable to it, or it learns, a model of its environment. 
+
+\textbf{Value function:} The expected long-term return of being in a state, following $\pi$. If you have values of states, and a model of the world, you can decide which actions to take by $\pi(s) \max_a \sum_{s'}P(s,a,s')V(s')$. Epsilon-greedy introduces a probability, $\epsilon$, that we pick a random action instead of the policy.
+
+\textbf{Q-Learning:} 1) Use epsilon-greedy to choose an action: with probability $\epsilon$ choose at random, otherwise use policy. 2) Take action $a$, observe the reward $r$ and the new state $s'$. 3) Update the Q-value for this state-action pair: $Q(s, a) = Q(s, a) + \alpha(r + \gamma * \max_{a'}Q(s', a') - Q(s, a))$. 4) If $s'$ is a final state, get an actual for the state. Idea is to minimize the difference between where you are now and where you can get to from this state.
+
+\textbf{Minimax:} Produces perfect play for deterministic, perfect-information games. Choose action with highest minimax value (i.e. search the tree choosing the max for agent 1 and choosing the min for agent 2). This branching is ~$O(b^m)$ where $b$ is the number of possible branches at a given state and $m$ is the number of games.
+
+\textbf{TD-Gammon:} Example of learning a value function using a neural network approximation to a real game. The network takes the board state as input and learns teh value of the board position by playing games with itself. Weights are update using a temporal difference rule on every move where the current estimate of the board value is updated to be closer to the next board's value. $w_{t + 1} - w_t = \alpha(Y_{t + 1} - Y_t) \sum_{k = 1}^t \lambda^{t - k} \nabla_w Y_k$
+
+\textbf{Monte Carlo Tree Search}
