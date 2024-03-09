@@ -12,6 +12,8 @@ RNNs have the vanishing/exploding gradient problem. In backprop, grad is multipl
 at each layer, so if the weights are < 1, the gradient may vanish and long term dependencies can't
 be learned. Otherwise, it may explode, and wont converge.
 
-\includegraphics[width=0.9\columnwidth]{images/lstm_full}
+\includegraphics[width=0.9\columnwidth]{images/lstm}
+
+Forget, input, and output gates (left to right).
 
 \includegraphics[width=0.9\columnwidth]{images/memcell}

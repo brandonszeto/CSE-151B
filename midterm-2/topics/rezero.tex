@@ -1,0 +1,11 @@
+\section{Rezero}
+
+Trains networks faster with a special residual connection
+
+\includegraphics[width=0.9\columnwidth]{images/rezero}
+
+If $\alpha=1$, network sensitive to small preturbations of input.
+If $\alpha=0$, network returns input.
+
+"self-attention and layernorm does not satisfy dynamical isometry", so they made rezero transformers. 
+Showed that log-eigenvalues were closer to 1 (desirable) than regular transformers
