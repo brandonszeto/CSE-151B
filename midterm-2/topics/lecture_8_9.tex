@@ -1,6 +1,16 @@
 \section{Recurrent Networks}
 
-\includegraphics[width=0.9\columnwidth]{images/lstm}
+Map time into state.
+
+Elman's network:
+\begin{itemize}
+  \item Next word prediction (29 word bank)
+  \item backprop only one step back in time
+\end{itemize}
+
+RNNs have the vanishing/exploding gradient problem. In backprop, grad is multiplied by weights
+at each layer, so if the weights are < 1, the gradient may vanish and long term dependencies can't
+be learned. Otherwise, it may explode, and wont converge.
 
 \includegraphics[width=0.9\columnwidth]{images/lstm_full}
 
